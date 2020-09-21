@@ -1,0 +1,13 @@
+<mvc:View controllerName="ui5pathdrawer.ui5pathdrawer.controller.View1" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+							<FlexBox id="PolylineDrawerHolder" alignItems="Start" justifyContent="Center"/>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
