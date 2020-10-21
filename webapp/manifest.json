@@ -14,7 +14,6 @@
 			"version": "1.40.12"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -31,7 +30,6 @@
 			"phone": true
 		}
 	},
-
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
@@ -58,6 +56,11 @@
 				"settings": {
 					"bundleName": "ui5pathdrawer.ui5pathdrawer.i18n.i18n"
 				}
+			},
+			"logger": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
 			}
 		},
 		"resources": {
@@ -76,7 +79,7 @@
 				"clearControlAggregation": false
 			},
 			"routes": [{
-				"name": "RouteView1",
+				"name": "TargetView1",
 				"pattern": "RouteView1",
 				"target": ["TargetView1"]
 			}],

@@ -49,12 +49,12 @@ sap.ui.core.Control.extend("sap.cc.PolylineDrawer", {
 		var aPathPoints = [];
 
 		// size of the diagram
-		var viewerWidth = 800;
-		var viewerHeight = 800;
+		var viewerWidth = 1200;
+		var viewerHeight = 1200;
 
 		//Draw a grid
-		var numberOfTicks = 40;
-		var sizeOfTicks = 20;
+		var numberOfTicks = 120;
+		var sizeOfTicks = 10;
 
 		var dragging = false,
 			drawing = false,
@@ -66,13 +66,13 @@ sap.ui.core.Control.extend("sap.cc.PolylineDrawer", {
 			.attr("width", viewerWidth);
 
 		//Background image
-		// var myimage = svg.append("image")
-		// 	.attr("xlink:href", "./images/map.png")
-		// 	.attr("width", viewerWidth)
-		// 	.attr("height", viewerHeight)
+		var myimage = svg.append("image")
+			.attr("xlink:href", "./images/MapGarden.png")
+			.attr("width", viewerWidth)
+			.attr("height", viewerHeight)
 
-		// myimage.attr("x", 50);
-		// myimage.attr("y", 20);
+		myimage.attr("x", 0);
+		myimage.attr("y", -300);
 
 		// create scale functions
 		var xScale = d3.scale.linear()

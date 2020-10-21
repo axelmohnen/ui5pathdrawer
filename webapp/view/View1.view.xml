@@ -1,16 +1,40 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="ui5pathdrawer.ui5pathdrawer.controller.View1"
-	displayBlock="true">
-	<Shell id="shell">
-		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content>
-						<Button xmlns="sap.m" text="Button" id="buttonPathId" press="onButtonPress"/>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" xmlns:tnt="sap.tnt"
+	controllerName="ui5pathdrawer.ui5pathdrawer.controller.View1" displayBlock="true">
+	<tnt:ToolPage id="toolPage">
+		<tnt:header>
+			<f:ShellBar title="{i18n>title}" showMenuButton="true" homeIcon="./resources/sap/ui/documentation/sdk/images/logo_ui5.png">
+				<f:profile>
+					<f:Avatar initials="UI"/>
+				</f:profile>
+				<f:additionalContent>
+						<Button xmlns="sap.m" text="Connect" id="buttonConnectId" press="onConnectPress" icon="{ViewModel>/iconConnectButton}" enabled="{ViewModel>/enabledConnectButton}"/>
+						<Button xmlns="sap.m" text="Run" id="buttonRunId" press="onRunPress" icon="sap-icon://physical-activity" enabled="{ViewModel>/enabledRunButton}"/>
+				</f:additionalContent>
+			</f:ShellBar>
+		</tnt:header>
+		<tnt:sideContent>
+			<!--<tnt:SideNavigation expanded="true" selectedKey="{/selectedKey}" itemSelect="onItemSelect">-->
+			<!--	<tnt:NavigationList items="{path: '/navigation'}">-->
+			<!--		<tnt:NavigationListItem text="{title}" icon="{icon}" enabled="{enabled}" expanded="{expanded}" items="{items}" key="{key}">-->
+			<!--			<tnt:NavigationListItem text="{title}" key="{key}" enabled="{enabled}"></tnt:NavigationListItem>-->
+			<!--		</tnt:NavigationListItem>-->
+			<!--	</tnt:NavigationList>-->
+			<!--	<tnt:fixedItem>-->
+			<!--		<tnt:NavigationList items="{path: '/fixedNavigation'}">-->
+			<!--			<tnt:NavigationListItem text="{title}" icon="{icon}"></tnt:NavigationListItem>-->
+			<!--		</tnt:NavigationList>-->
+			<!--	</tnt:fixedItem>-->
+			<!--</tnt:SideNavigation>-->
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="pageContainer" initialPage="page2">
+				<pages>
+					<ScrollContainer id="root1" horizontal="false" vertical="false" height="100%">
 						<Text xmlns="sap.m" text="{ViewModel>/PathText}" id="textPathId"/>
 						<FlexBox id="PolylineDrawerHolder" alignItems="Start" justifyContent="Center"></FlexBox>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+					</ScrollContainer>
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
 </mvc:View>
